@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoLink Case Study: Unifirst Corporation Deploys IoT Solutions Across North America</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36B37E',
+                        accent: '#FF5630',
+                        neutral: {
+                            100: '#F5F7FA',
+                            200: '#E5E6EB',
+                            300: '#C9CDD4',
+                            400: '#86909C',
+                            500: '#4E5969',
+                            600: '#272E3B',
+                            700: '#1D2129',
+                        }
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+                        'hover': '0 20px 40px -5px rgba(0, 0, 0, 0.15)',
+                    }
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            .bg-gradient-blue {
+                background: linear-gradient(135deg, #165DFF 0%, #0E42B3 100%);
+            }
+            .bg-glass {
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(10px);
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-inter text-neutral-700 bg-neutral-100 overflow-x-hidden">
+    <!-- Navigation Bar -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-glass">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+                    <i class="fa fa-link text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold text-neutral-700">YoLink</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#overview" class="text-neutral-500 hover:text-primary transition-colors">Overview</a>
+                <a href="#solution" class="text-neutral-500 hover:text-primary transition-colors">Solution</a>
+                <a href="#deployment" class="text-neutral-500 hover:text-primary transition-colors">Deployment</a>
+                <a href="#implementation" class="text-neutral-500 hover:text-primary transition-colors">Implementation</a>
+                <a href="#benefits" class="text-neutral-500 hover:text-primary transition-colors">Benefits</a>
+                <a href="#resources" class="text-neutral-500 hover:text-primary transition-colors">Resources</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-neutral-700 focus:outline-none">
+                <i class="fa fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-neutral-200">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#overview" class="text-neutral-500 hover:text-primary py-2 transition-colors">Overview</a>
+                <a href="#solution" class="text-neutral-500 hover:text-primary py-2 transition-colors">Solution</a>
+                <a href="#deployment" class="text-neutral-500 hover:text-primary py-2 transition-colors">Deployment</a>
+                <a href="#implementation" class="text-neutral-500 hover:text-primary py-2 transition-colors">Implementation</a>
+                <a href="#benefits" class="text-neutral-500 hover:text-primary py-2 transition-colors">Benefits</a>
+                <a href="#resources" class="text-neutral-500 hover:text-primary py-2 transition-colors">Resources</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-blue text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6">
+                    YoLink Empowers Unifirst Corporation to Deploy IoT Solutions<br>Across 100+ Sites in North America
+                </h1>
+                <p class="text-[clamp(1.1rem,2vw,1.3rem)] text-white/80 mb-10 max-w-3xl mx-auto text-balance">
+                    Leveraging LoRa technology to create long-range, low-power sensor networks for workplace safety and compliance
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#solution" class="px-8 py-3 bg-white text-primary rounded-lg font-medium hover:bg-neutral-100 transition-all transform hover:-translate-y-1 shadow-lg">
+                        Explore Solution
+                    </a>
+                    <a href="#contact" class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all transform hover:-translate-y-1">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-neutral-700 mb-4">Project Overview</h2>
+                    <p class="text-lg text-neutral-500 max-w-3xl mx-auto">YoLink deployed IoT solutions across more than 100 service centers and warehouses for Unifirst Corporation, enabling environmental monitoring and safety assurance</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-neutral-700">Customer Challenges</h3>
+                        <p class="text-neutral-600">As a leading provider of uniforms and industrial laundry services in North America, Unifirst faced challenges arising from operational complexity and physical scale:</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa fa-exclamation-circle text-accent mt-1 mr-3"></i>
+                                <span>Environmental monitoring required across 100+ service centers and warehouses, with traditional sensors proving difficult to deploy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-exclamation-circle text-accent mt-1 mr-3"></i>
+                                <span>Compliance requirements with OSHA and Cal/OSHA temperature and humidity monitoring standards</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-exclamation-circle text-accent mt-1 mr-3"></i>
+                                <span>High costs and complexity associated with wiring and strong Wi-Fi coverage required for traditional sensors</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-exclamation-circle text-accent mt-1 mr-3"></i>
+                                <span>Need for real-time monitoring and alert systems to prevent floods, equipment damage, and unauthorized access</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="bg-neutral-100 rounded-xl p-6 shadow-card transform hover:shadow-hover transition-all duration-300">
+                            <img src="https://picsum.photos/seed/unifirst1/800/600" alt="Unifirst Warehouse Environment" class="w-full h-auto rounded-lg mb-6">
+                            <div class="flex flex-wrap gap-3 justify-center">
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">100+ Service Centers</span>
+                                <span class="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">100+ Deployed Sites</span>
+                                <span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">5+ Year Battery Life</span>
+                                <span class="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">4G LTE Network</span>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full -z-10 animate-float"></div>
+                        <div class="absolute -top-6 -left-6 w-24 h-24 bg-secondary/10 rounded-full -z-10 animate-float" style="animation-delay: 2s"></div>
+                    </div>
+                </div>
+                
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-8 shadow-card hover:shadow-hover transition-all duration-300 border border-neutral-200">
+                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                            <i class="fa fa-map-marker text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Coverage Area</h3>
+                        <p class="text-neutral-600">Spanning over 100 locations across the United States and Canada, including warehouses, service centers, and production facilities</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-card hover:shadow-hover transition-all duration-300 border border-neutral-200">
+                        <div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center mb-6">
+                            <i class="fa fa-sitemap text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Sensor Network</h3>
+                        <p class="text-neutral-600">Deployment of over 500 sensors, including temperature & humidity sensors, leak detectors, door sensors, and motion sensors</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-card hover:shadow-hover transition-all duration-300 border border-neutral-200">
+                        <div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-6">
+                            <i class="fa fa-shield text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Compliance Assurance</h3>
+                        <p class="text-neutral-600">Fully compliant with OSHA and Cal/OSHA heat stress monitoring requirements, ensuring a safe working environment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 bg-neutral-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-neutral-700 mb-4">YoLink Solution</h2>
+                    <p class="text-lg text-neutral-500 max-w-3xl mx-auto">A long-range, low-power IoT solution based on LoRa technology, providing reliable monitoring capabilities for industrial environments</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                    <div class="order-2 md:order-1">
+                        <img src="https://picsum.photos/seed/yolink1/800/600" alt="YoLink Sensor System" class="w-full h-auto rounded-xl shadow-lg">
+                    </div>
+                    
+                    <div class="order-1 md:order-2 space-y-6">
+                        <h3 class="text-2xl font-bold text-neutral-700">Key Advantages</h3>
+                        <p class="text-neutral-600">The YoLink sensor system provides Unifirst Corporation with an efficient and reliable environmental monitoring solution through its unique technical advantages:</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fa fa-signal text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">📡 Long Range</h4>
+                                    <p class="text-neutral-600">Based on LoRa technology with transmission range up to 1000 feet, easily covering large warehouses and industrial facilities</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fa fa-battery-full text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">🔋 Ultra-Long Battery Life</h4>
+                                    <p class="text-neutral-600">Ultra-low power design with battery life up to 5 years, reducing maintenance costs and workload</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fa fa-wrench text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">🔧 Easy Installation</h4>
+                                    <p class="text-neutral-600">No wiring required, non-professionals can complete installation, saving time and costs</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fa fa-mobile text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">📱 Real-time Mobile Alerts</h4>
+                                    <p class="text-neutral-600">Receive real-time alerts via mobile app for leaks, abnormal temperatures, unauthorized access, etc.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fa fa-cloud text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">☁️ Cloud Access</h4>
+                                    <p class="text-neutral-600">Monitor all sensor data via cloud platform anytime, anywhere, supporting historical data query and analysis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/sensor1/600/400" alt="Temperature & Humidity Sensor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Temperature & Humidity Sensor</h3>
+                            <p class="text-neutral-600 mb-4">Accurately monitors environmental temperature and humidity to ensure storage conditions meet requirements and prevent equipment failure and product damage</p>
+                            <ul class="space-y-2 text-sm text-neutral-500">
+                                <li class="flex items-center">
+                                    <i class="fa fa-check text-secondary mr-2"></i>
+                                    Measurement Range: -40°F to 158°F (-40°C to 70°C)
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check text-secondary mr-2"></i>
+                                    Accuracy: ±0.5°F (±0.3°C)
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check text-secondary mr-2"></i>
+                                    Humidity Accuracy: ±3%RH
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/sensor2/600/400" alt="Water Leak Sensor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Water Leak Sensor</h3>
+                            <p class="text-neutral-600 mb-4">Real-time detection of water leaks to prevent floods and equipment damage, protecting valuable assets and facility safety</p>
+                            <ul class="space-y-2 text-sm text-neutral-500">
+                                <li class="flex items-center">
+                                    <i class="fa fa-check text-secondary mr-2"></i>
+                                    High sensitivity detection
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check text-secondary mr-2"></i>
+                                    Waterproof design, suitable for wet environments
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check text-secondary mr-2"></i>
+                                    Instant alert notification
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/sensor3/600/400" alt="Door Sensor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Door Sensor</h3>
+                            <p class="text-neutral-600 mb-4">Monitors door open/close status to prevent unauthorized access, improving security and operational efficiency</p>
+                            <ul class="space-y-2 text-sm text-neutral-500">
+                                <li class="flex items-center">
+                                    <i class="fa fa-check text-secondary mr-2"></i>
+                                    Accurately detects door open/close status
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check text-secondary mr-2"></i>
+                                    Configurable alerts for abnormal door openings
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check text-secondary mr-2"></i>
+                                    Records door opening history and duration
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Case Study Section -->
+    <section id="deployment" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-neutral-700 mb-4">Deployment Case Study</h2>
+                    <p class="text-lg text-neutral-500 max-w-3xl mx-auto">Real-world deployment scenarios and use cases of the YoLink sensor system across Unifirst Corporation's facilities</p>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-neutral-100 rounded-xl p-8 md:p-12 shadow-card">
+                        <h3 class="text-2xl font-bold text-neutral-700 mb-6">Temperature & Humidity Monitoring Solution</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 items-center mb-10">
+                            <div>
+                                <p class="text-neutral-600 mb-6">To meet OSHA and Cal/OSHA heat stress monitoring requirements, YoLink deployed a temperature and humidity sensor network across Unifirst's warehouses and work areas:</p>
+                                
+                                <ul class="space-y-4">
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+                                            <span class="text-primary font-bold">1</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Three-Stage Alert System</h4>
+                                            <p class="text-neutral-600">Three alert levels (82°F warning, 87°F moderate, 103°F high) corresponding to different preventive measures</p>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+                                            <span class="text-primary font-bold">2</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Temperature Mapping Plan</h4>
+                                            <p class="text-neutral-600">Sensor locations determined through pre-installation temperature mapping plan to cover all work areas and hotspots</p>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+                                            <span class="text-primary font-bold">3</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Flexible Deployment Strategy</h4>
+                                            <p class="text-neutral-600">Different sensor deployment strategies (single-point, dual-point, or tri-point arrangement) based on work area size</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="h-64">
+                                    <canvas id="temperatureChart"></canvas>
+                                </div>
+                                <p class="text-sm text-neutral-500 mt-4 text-center">Temperature Monitoring Data Example (24 Hours)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white rounded-lg p-6 shadow-md">
+                                <h4 class="font-bold text-lg mb-3 flex items-center">
+                                    <i class="fa fa-map-marker text-primary mr-2"></i>
+                                    Sensor Installation Locations
+                                </h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <i class="fa fa-check-circle text-secondary mr-2"></i>
+                                        Packaging workstation areas
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-check-circle text-secondary mr-2"></i>
+                                        Work dock areas
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-check-circle text-secondary mr-2"></i>
+                                        Warehouse goods exit areas
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-check-circle text-secondary mr-2"></i>
+                                        Heat tunnel and mezzanine work areas
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-check-circle text-secondary mr-2"></i>
+                                        Maintenance areas and battery charging zones
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg p-6 shadow-md">
+                                <h4 class="font-bold text-lg mb-3 flex items-center">
+                                    <i class="fa fa-bell text-primary mr-2"></i>
+                                    Alert Settings
+                                </h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <i class="fa fa-thermometer-quarter text-accent mr-2"></i>
+                                        Warning Level (82°F): Send notification
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-thermometer-half text-orange mr-2"></i>
+                                        Moderate Level (87°F): Send notification and initiate cooling measures
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-thermometer-full text-red mr-2"></i>
+                                        High Level (103°F): Send emergency notification and activate emergency response plan
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-clock-o text-secondary mr-2"></i>
+                                        Alerts triggered only during working hours (Monday-Friday, 2:00 AM - 8:00 PM)
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg p-6 shadow-md">
+                                <h4 class="font-bold text-lg mb-3 flex items-center">
+                                    <i class="fa fa-cogs text-primary mr-2"></i>
+                                    Deployment Strategy
+                                </h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <i class="fa fa-arrows-h text-secondary mr-2"></i>
+                                        Small areas: Central single-point deployment
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-arrows-h text-secondary mr-2"></i>
+                                        Medium areas: Dual-point deployment at 1/3 and 2/3 positions
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-arrows-h text-secondary mr-2"></i>
+                                        Large areas: Uniformly distributed tri-point deployment
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fa fa-refresh text-secondary mr-2"></i>
+                                        Sensor positions adjustable based on monitoring data
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-2 rounded-full text-sm font-medium">
+                        Heat Stress Environmental Monitoring Solution
+                    </div>
+                </div>
+                
+                <div class="mt-20 grid md:grid-cols-2 gap-10">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-card group">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://picsum.photos/seed/deployment1/800/500" alt="Warehouse Deployment Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Large Warehouse Deployment Case</h3>
+                            <p class="text-neutral-600 mb-4">In a 50,000-square-foot warehouse, 20 temperature/humidity sensors and 5 leak sensors were deployed for comprehensive environmental monitoring.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Temperature & Humidity Monitoring</span>
+                                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs">Water Leak Detection</span>
+                                <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs">24/7 Monitoring</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                                Learn More <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-card group">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://picsum.photos/seed/deployment2/800/500" alt="Office Deployment Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Office Environmental Monitoring</h3>
+                            <p class="text-neutral-600 mb-4">Door sensors and environmental sensors deployed in office areas to monitor employee access and environmental comfort, improving office efficiency and security.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">Access Control Monitoring</span>
+                                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs">Environmental Comfort</span>
+                                <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs">Energy Efficiency Optimization</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                                Learn More <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Guide Section -->
+    <section id="implementation" class="py-20 bg-neutral-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-neutral-700 mb-4">Implementation Guide</h2>
+                    <p class="text-lg text-neutral-500 max-w-3xl mx-auto">Detailed implementation steps and best practices for YoLink's heat stress environmental monitoring solution</p>
+                </div>
+                
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="md:col-span-3 space-y-8">
+                        <div class="bg-white rounded-xl p-8 shadow-card">
+                            <h3 class="text-xl font-bold mb-6 flex items-center">
+                                <span class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mr-4">1</span>
+                                Project Planning Phase
+                            </h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>Review company's heat illness prevention plan to ensure environmental temperature and humidity monitoring is included</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>Designate personnel responsible for temperature monitoring project (TMO) and assign alert recipients in Raedius application</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>Develop temperature mapping plan (TMP) based on historical data and work area layouts</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>Identify hotspot areas and critical work areas requiring monitoring</span>
+                                </li>
+                            </ul>
+                        </div>
